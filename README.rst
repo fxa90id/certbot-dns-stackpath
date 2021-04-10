@@ -20,7 +20,7 @@ To acquire a single certificate for ``example.com``, waiting 60 seconds for DNS 
 .. code-block:: bash
 
     sudo certbot certonly \
-    --authenticator certbot-dns-stackpath:dns-stackpath \
+    --authenticator dns-stackpath \
     --dns-stackpath-propagation-seconds 60 \
     --dns-stackpath-credentials stackpath.ini 
     -d example.com
