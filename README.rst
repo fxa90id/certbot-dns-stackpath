@@ -12,7 +12,27 @@ Installation
   pip install certbot-dns-stackpath
 
 
-Examples
+Setting credentials.ini
+------------
+**Generate client secret/id and stack id .**
+
+After you set up API credentials in your StackPath account - you'll need the client id and secret.
+You'll also need a 3rd item the "stack id", which isn't really well identified in the StackPath account page.
+You'll find it labeled as the "SLUG" on your "My Stacks" account page. The one for my account looks like "my-default-stack-abc123"
+
+
+**Create your credentials.ini file, with 3 items:**
+
+.. code-block:: ini
+
+  dns_stackpath_client_secret = xyz
+  dns_stackpath_client_id = xyz
+  dns_stackpath_stack_id = my-default-stack-abc123
+
+
+Thanks to `@stutteringp0et <https://github.com/stutteringp0et>`_
+
+Usage
 ------------
 
 To acquire a single certificate for ``example.com``, waiting 60 seconds for DNS propagation:
@@ -22,5 +42,5 @@ To acquire a single certificate for ``example.com``, waiting 60 seconds for DNS 
     sudo certbot certonly \
     --authenticator dns-stackpath \
     --dns-stackpath-propagation-seconds 60 \
-    --dns-stackpath-credentials stackpath.ini 
+    --dns-stackpath-credentials credentials.ini 
     -d example.com
