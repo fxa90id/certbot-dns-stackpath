@@ -1,6 +1,8 @@
 StackPath DNS Authenticator plugin for Certbot
 ==============================================
 
+⚠️ **This repository is archived and no longer maintained. The StackPath was shutdown on June 14, 2024.**
+
 This plugin automates the process of completing a dns-01 challenge by creating, and subsequently removing, TXT records using the StackPath API.
 
 
